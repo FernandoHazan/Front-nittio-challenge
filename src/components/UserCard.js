@@ -1,28 +1,37 @@
 "use client";
 
 import styles from "./UserCard.module.css";
+import { useRef } from "react";
 
 export default function UserCard({ user, onFlechar }) {
-    return (
-        <div className={styles.card}>
-            <img src={user.photo} alt={user.name} className={styles.image} />
+  const imageRef = useRef(null);
 
-            <div className={styles.content}>
-                <h2 className={styles.name}>{user.name}</h2>
-                <p className={styles.description}>{user.description}</p>
-                <p className={styles.age}>{user.age} anos</p>
-            </div>
+  return (
+    <div className={styles.card}>     
+      <img
+        ref={imageRef}
+        src={user.photo}
+        alt={user.name}
+        className={styles.image}
+      />
 
-            <button
-                onClick={onFlechar}
-                disabled={user.alreadyArrowed}
-                className={`${styles.button} ${user.alreadyArrowed
-                        ? styles.buttonDisabled
-                        : styles.buttonActive
-                    }`}
-            >
-                {user.alreadyArrowed ? "Já flechado" : "Flechar"}
-            </button>
-        </div>
-    );
+      <div className={styles.content}>
+        <h2 className={styles.name}>{user.name}</h2>
+        <p className={styles.description}>{user.description}</p>
+        <p className={styles.age}>{user.age} anos</p>
+      </div>
+
+      <button
+        onClick={() => onFlechar(imageRef)}
+        disabled={user.alreadyArrowed}
+        className={`${styles.button} ${
+          user.alreadyArrowed
+            ? styles.buttonDisabled
+            : styles.buttonActive
+        }`}
+      >
+        {user.alreadyArrowed ? "Já flechado" : "Flechar"}
+      </button>
+    </div>
+  );
 }

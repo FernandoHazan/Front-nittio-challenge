@@ -8,11 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="pt-BR">
-            <head>
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
-                    rel="stylesheet"
-                />
+            <head>             
             </head>
             <body>
                 {children}

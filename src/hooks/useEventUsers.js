@@ -28,5 +28,6 @@ export function useEventUsers() {
         loadUsers();
     }, []);
 
+    
     return { users, loading, reload: loadUsers };
 }

@@ -28,7 +28,7 @@ export async function fetchEventUsersArrowStatus(eventId, userId) {
     );
 
     if (!response.ok) {
-        throw new Error("Erro ao buscar evento");
+        throw new Error("Erro ao buscar usuários por evento");
     }
 
     return response.json();
@@ -54,8 +54,3 @@ export async function flecharUser(fromUser, toUser, eventId) {
 
     return response.json();
 }
-
-
-
-
-
