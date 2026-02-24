@@ -10,9 +10,21 @@ export async function fetchEvents() {
     return response.json();
 }
 
-export async function fetchEventUsers(userId) {
+export async function fetchUsers() {
     const response = await fetch(
-        `http://localhost:5000/api/events/${userId}/users`
+        `http://localhost:5000/api/users`
+    );
+
+    if (!response.ok) {
+        throw new Error("Erro ao buscar usuarios");
+    }
+
+    return response.json();
+}
+
+export async function fetchEventUsers(eventId) {
+    const response = await fetch(
+        `http://localhost:5000/api/events/${eventId}/users`
     );
 
     if (!response.ok) {
@@ -54,3 +66,8 @@ export async function flecharUser(fromUser, toUser, eventId) {
 
     return response.json();
 }
+
+
+
+
+

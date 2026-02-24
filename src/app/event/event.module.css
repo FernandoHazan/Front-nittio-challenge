@@ -8,66 +8,11 @@
   padding-top: 80px;
 }
 
-/* HEADER */
-
-.header {
-  height: 80px;
-  background: rgba(16, 16, 20, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  position: fixed; /* ✅ já fixo */
-  top: 0; /* garante que fique no topo */
-  left: 0;
-  right: 0;
-  z-index: 999; /* para sobrepor o conteúdo */
-}
-
-.logo {
-  font-weight: 800;
-  font-size: 1.4rem;
-  color: var(--blue-primary);
-  letter-spacing: 1px;
-}
-
-.userProfile {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 2px solid var(--blue-primary);
-  padding: 2px;
-  box-shadow: 0 0 15px rgba(26, 64, 255, 0.6);
-}
-
-.userProfile img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* HERO */
-
-.hero {
-  padding: 60px 20px 30px;
-  text-align: center;
-}
-
 .title {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
-
-.subtitle {
-  margin-top: 10px;
-  color: var(--text-muted);
-  font-size: 1.1rem;
-}
-
-/* GRID */
 
 .grid {
   display: grid;
@@ -76,10 +21,43 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* Loading */
+.card {
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+}
 
-.loading {
-  text-align: center;
-  padding: 100px;
-  font-size: 1.2rem;
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #c0c0c0;
+}
+
+.button {
+  margin-top: 1rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1e40af;
 }

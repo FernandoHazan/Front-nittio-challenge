@@ -3,13 +3,9 @@
 import { useEffect, useState } from "react";
 import { fetchEventUsersArrowStatus, fetchEvents, fetchEventUsers } from "../services/api";
 
-const events = await fetchEvents();
-const eventId = events[0]._id;
 
-const user = await fetchEventUsers(eventId);
-const userId = user[0]._id;;
 
-export function useEventUsers() {
+export function useEventUsers(eventId, userId) {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
 
